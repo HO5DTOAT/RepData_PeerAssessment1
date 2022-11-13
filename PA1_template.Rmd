@@ -58,6 +58,16 @@ main = "Average Steps per Interval"
 )
 ```
 
+The five minute interval containing the maximum average is also calculated.
+```{r max_avg_steps_interval, echo=TRUE, results='markup'}
+max_avg_steps_interval_row <- which.max(avg_steps_per_interval$steps)
+print(avg_steps_per_interval[max_avg_steps_interval_row, ])
+```
+The maximum number of average steps is 
+`r avg_steps_per_interval[max_avg_steps_interval_row, "steps"]`
+ and the corresponding five minute interval is 
+ `r avg_steps_per_interval[max_avg_steps_interval_row, "interval"]`
+
 ## Imputing missing values
 For calculating the rows with missing values, at least one column in the row 
 must contain NA.
